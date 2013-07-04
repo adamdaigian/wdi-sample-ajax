@@ -1,1 +1,12 @@
-alert("bar");
+var options = {
+   type: "GET",
+   url: "http://bwb.webscript.io/weather?x=<%= @lat %>&y=<%= @long %>",
+
+   complete: function(response, status_text){
+     var weather = $.parseJSON(response.responseText).currently.summary;
+
+     $("body").text(weather);
+   }
+ };
+
+ $.ajax(options);

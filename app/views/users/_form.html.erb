@@ -1,28 +1,14 @@
-<%= form_for(@user, :remote => true) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<form id="map_form">
+  <input type="text" name="lat" id="lat" />
+  <input type="text" name="long" id="long" />
+  <button>Send</button>
+</form>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<hr>
+
+<%#= form_for("something", :html_options => {:id => "map_form_2"}) do |f| %>
+  <%#= f.text_field :lat %>
+  <%#= f.text_field :long %>
+
+  <%#= f.submit "Send" %>
+<%# end %>

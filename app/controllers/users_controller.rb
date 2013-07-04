@@ -40,7 +40,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    @lat = params[:lat]
+    @long = params[:long]
 
     respond_to do |format|
       if @user.save
